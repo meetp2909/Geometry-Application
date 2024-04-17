@@ -1,7 +1,8 @@
-namespace GeoAppLibrary;
-
 using GeoAppLibrary.Interface;
 
+
+namespace GeoAppLibrary
+{
 
 public class Rectangle : IShape
 {
@@ -23,4 +24,5 @@ public class Rectangle : IShape
     {
         return 2 * (length + width);
     }
+}
 }

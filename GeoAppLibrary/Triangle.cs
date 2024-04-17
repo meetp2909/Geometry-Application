@@ -1,8 +1,6 @@
-namespace GeoAppLibrary;
-
 using GeoAppLibrary.Interface;
-
-
+namespace GeoAppLibrary
+{
 public class Triangle : IShape
 {
     private double side1;
@@ -27,4 +25,5 @@ public class Triangle : IShape
     {
         return side1 + side2 + side3;
     }
+}
 }

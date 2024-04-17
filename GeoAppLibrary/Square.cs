@@ -1,6 +1,9 @@
-namespace GeoAppLibrary
-
 using GeoAppLibrary.Interface;
+
+
+
+namespace GeoAppLibrary
+{
 
 public class Square : IShape
 {
@@ -20,4 +23,5 @@ public class Square : IShape
     {
         return 4 * sideLength;
     }
+}
 }
