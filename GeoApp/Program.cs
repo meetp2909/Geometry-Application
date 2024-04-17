@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
+using GeoAppLibrary;
 using Microsoft.Extensions.Configuration;
 using Microsoft.FeatureManagement;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,28 +48,49 @@ namespace GeoApp
             }
         }
 
-        static void AcceptSquareDimensions()
-        {
-            Console.WriteLine("Please enter the side length of the square:");
-            double sideLength = double.Parse(Console.ReadLine());
-        }
+      static void AcceptSquareDimensions()
+{
+    Console.WriteLine("Please enter the side length of the square:");
+    double sideLength = double.Parse(Console.ReadLine());
+    var square = new Square(sideLength);
+     double area = square.CalculateArea();
+    double perimeter = square.CalculatePerimeter();
 
-        static void AcceptRectangleDimensions()
-        {
-            Console.WriteLine("Please enter the length of the rectangle:");
-            double length = double.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter the width of the rectangle:");
-            double width = double.Parse(Console.ReadLine());
-       }
+    Console.WriteLine($"Area of Square: {area}");
+    Console.WriteLine($"Perimeter of Square: {perimeter}");
+}
 
-        static void AcceptTriangleDimensions()
-        {
-            Console.WriteLine("Please enter the length of side 1 of the triangle:");
-            double side1 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter the length of side 2 of the triangle:");
-            double side2 = double.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter the length of side 3 of the triangle:");
-            double side3 = double.Parse(Console.ReadLine());
-        }
+
+       static void AcceptRectangleDimensions()
+{
+    Console.WriteLine("Please enter the length of the rectangle:");
+    double length = double.Parse(Console.ReadLine());
+    Console.WriteLine("Please enter the width of the rectangle:");
+    double width = double.Parse(Console.ReadLine());
+    var rectangle = new Rectangle(length, width);
+
+    double area = rectangle.CalculateArea();
+    double perimeter = rectangle.CalculatePerimeter();
+
+    Console.WriteLine($"Area of Rectangle: {area}");
+    Console.WriteLine($"Perimeter of Rectangle: {perimeter}");
+}
+    
+      static void AcceptTriangleDimensions()
+{
+    Console.WriteLine("Please enter the length of side 1 of the triangle:");
+    double side1 = double.Parse(Console.ReadLine());
+    Console.WriteLine("Please enter the length of side 2 of the triangle:");
+    double side2 = double.Parse(Console.ReadLine());
+    Console.WriteLine("Please enter the length of side 3 of the triangle:");
+    double side3 = double.Parse(Console.ReadLine());
+
+    var triangle = new Triangle(side1, side2, side3);
+    double area = triangle.CalculateArea();
+    double perimeter = triangle.CalculatePerimeter();
+
+    Console.WriteLine($"Area of Triangle: {area}");
+    Console.WriteLine($"Perimeter of Triangle: {perimeter}");
+}
     }
 }
